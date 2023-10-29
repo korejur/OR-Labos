@@ -1,2 +1,0 @@
-cd C:\Program Files\PostgreSQL\15\bin
-pg_dump -h localhost -p 5432 -U postgres -W -d muzejiZagreba -f C:\OR\muzejiZagreba_DUMP.sql
