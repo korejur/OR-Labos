@@ -5,7 +5,7 @@
 
 ## Opis
 Ovaj skup podataka sadrži informacije o nekim muzejima i nekim njihovim izložbama u Zagrebu. Skup podataka služi za potrebe prve laboratorijske vježbe predmeta *Otvoreno računarstvo* na *Fakultetu elektrotehnike i računarstva*. 
-Podaci su prikupljeni s *Portala otvorenih podataka - Grad Zagreb* te web-stranica svakog pojedinog navedenog muzeja te obuhvaćaju osnovne informacije o muzejima i njihovim izložbama.
+Podaci su prikupljeni s *Portala otvorenih podataka - Grad Zagreb* i web-stranica svakog pojedinog navedenog muzeja te obuhvaćaju osnovne informacije o muzejima i njihovim izložbama.
 
 ## Metapodaci
 - **Licencija**: Otvorena licencija - Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
