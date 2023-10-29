@@ -32,5 +32,5 @@ Podaci su prikupljeni s *Portala otvorenih podataka - Grad Zagreb* te web-strani
 - [Hrvatski školski muzej](https://hsmuzej.hr/)
 - [Lauba](https://lauba.hr/)
 - [Hrvatski prirodoslovni muzej](https://hpm.hr/)
-- [Muzej blaženog Alojzija Stepinca]([https://emz.hr/](https://www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca)
+- [Muzej blaženog Alojzija Stepinca](https://www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca)
 - [Muzej grada Zagreba](https://mgz.hr/)
