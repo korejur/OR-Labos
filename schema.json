@@ -1,0 +1,1191 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://github.com/korejur/OR-Labos/blob/main/schema.json",
+  "type": "array",
+  "default": [],
+  "title": "Muzeji grada Zagreba",
+  "items": {
+    "type": "object",
+    "title": "Muzej",
+    "required": ["muzej", "izlozbe"],
+    "properties": {
+      "muzej": {
+        "type": "object",
+        "title": "Informacije o muzeju",
+        "required": [
+          "mail",
+          "adresa",
+          "telefon",
+          "idmuzeja",
+          "nazivmuzeja",
+          "webstranica"
+        ],
+        "properties": {
+          "mail": {
+            "type": "string",
+            "title": "Mail",
+            "examples": [
+              "amz@amz.hr",
+              "emz@emz.hr",
+              "msu@msu.hr",
+              "mimara@mimara.hr",
+              "info@tmnt.hr",
+              "info@tifoloskimuzej.hr",
+              "hsm@hsmuzej.hr",
+              "info@lauba.hr",
+              "info@hpm.hr",
+              "muzejstepinac@zg-nadbiskupija.hr",
+              "mgz@mgz.hr"
+            ]
+          },
+          "adresa": {
+            "type": "string",
+            "title": "Adresa",
+            "examples": [
+              "Trg Nikole Šubića Zrinskog 19",
+              "Trg Mažuranića 14",
+              "Avenija Dubrovnik 17",
+              "Rooseveltov trg 5",
+              "Savska cesta 18",
+              "Draškovićeva 80/II",
+              "Trg Republike Hrvatske 4",
+              "Baruna Filipovića 23a",
+              "Demetrova 1",
+              "Kaptol 31",
+              "Opatička 20"
+            ]
+          },
+          "telefon": {
+            "type": "string",
+            "title": "Telefon",
+            "examples": [
+              "+385 1 4873 000",
+              "+385 1 4826 220",
+              "+385 1 6052 700",
+              "+385 1 4828 100",
+              "+385 1 4844 050",
+              "+385 1 4811 102",
+              "+385 1 4855 716",
+              "+385 1 6302 11",
+              "+385 1 4851 700",
+              "+385 1 4894 879",
+              "+385 1 4851 361"
+            ]
+          },
+          "idmuzeja": {
+            "type": "integer",
+            "title": "ID muzeja",
+            "examples": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+          },
+          "nazivmuzeja": {
+            "type": "string",
+            "title": "Naziv muzeja",
+            "examples": [
+              "Arheološki muzej Zagreb",
+              "Etnografski muzej",
+              "Muzej suvremene umjetnosti",
+              "Muzej Mimara",
+              "Tehnički muzej Nikola Tesla",
+              "Tifološki muzej",
+              "Hrvatski školski muzej",
+              "Lauba",
+              "Hrvatski prirodoslovni muzej",
+              "Muzej blaženog Alojzija Stepinca",
+              "Muzej grada Zagreba"
+            ]
+          },
+          "webstranica": {
+            "type": "string",
+            "title": "Web stranica",
+            "examples": [
+              "www.amz.hr",
+              "www.emz.hr",
+              "www.msu.hr",
+              "www.mimara.hr",
+              "www.tehnicki-muzej.hr",
+              "www.tifoloskimuzej.hr",
+              "www.hsmuzej.hr",
+              "www.lauba.hr",
+              "www.hpm.hr",
+              "www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca",
+              "www.mgz.hr"
+            ]
+          }
+        },
+        "examples": [
+          {
+            "mail": "amz@amz.hr",
+            "adresa": "Trg Nikole Šubića Zrinskog 19",
+            "telefon": "+385 1 4873 000",
+            "idmuzeja": 1,
+            "nazivmuzeja": "Arheološki muzej Zagreb",
+            "webstranica": "www.amz.hr"
+          },
+          {
+            "mail": "emz@emz.hr",
+            "adresa": "Trg Mažuranića 14",
+            "telefon": "+385 1 4826 220",
+            "idmuzeja": 2,
+            "nazivmuzeja": "Etnografski muzej",
+            "webstranica": "www.emz.hr"
+          },
+          {
+            "mail": "msu@msu.hr",
+            "adresa": "Avenija Dubrovnik 17",
+            "telefon": "+385 1 6052 700",
+            "idmuzeja": 3,
+            "nazivmuzeja": "Muzej suvremene umjetnosti",
+            "webstranica": "www.msu.hr"
+          },
+          {
+            "mail": "mimara@mimara.hr",
+            "adresa": "Rooseveltov trg 5",
+            "telefon": "+385 1 4828 100",
+            "idmuzeja": 4,
+            "nazivmuzeja": "Muzej Mimara",
+            "webstranica": "www.mimara.hr"
+          },
+          {
+            "mail": "info@tmnt.hr",
+            "adresa": "Savska cesta 18",
+            "telefon": "+385 1 4844 050",
+            "idmuzeja": 5,
+            "nazivmuzeja": "Tehnički muzej Nikola Tesla",
+            "webstranica": "www.tehnicki-muzej.hr"
+          },
+          {
+            "mail": "info@tifoloskimuzej.hr",
+            "adresa": "Draškovićeva 80/II",
+            "telefon": "+385 1 4811 102",
+            "idmuzeja": 6,
+            "nazivmuzeja": "Tifološki muzej",
+            "webstranica": "www.tifoloskimuzej.hr"
+          },
+          {
+            "mail": "hsm@hsmuzej.hr",
+            "adresa": "Trg Republike Hrvatske 4",
+            "telefon": "+385 1 4855 716",
+            "idmuzeja": 7,
+            "nazivmuzeja": "Hrvatski školski muzej",
+            "webstranica": "www.hsmuzej.hr"
+          },
+          {
+            "mail": "info@lauba.hr",
+            "adresa": "Baruna Filipovića 23a",
+            "telefon": "+385 1 6302 11",
+            "idmuzeja": 8,
+            "nazivmuzeja": "Lauba",
+            "webstranica": "www.lauba.hr"
+          },
+          {
+            "mail": "info@hpm.hr",
+            "adresa": "Demetrova 1",
+            "telefon": "+385 1 4851 700",
+            "idmuzeja": 9,
+            "nazivmuzeja": "Hrvatski prirodoslovni muzej",
+            "webstranica": "www.hpm.hr"
+          },
+          {
+            "mail": "muzejstepinac@zg-nadbiskupija.hr",
+            "adresa": "Kaptol 31",
+            "telefon": "+385 1 4894 879",
+            "idmuzeja": 10,
+            "nazivmuzeja": "Muzej blaženog Alojzija Stepinca",
+            "webstranica": "www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca"
+          },
+          {
+            "mail": "mgz@mgz.hr",
+            "adresa": "Opatička 20",
+            "telefon": "+385 1 4851 361",
+            "idmuzeja": 11,
+            "nazivmuzeja": "Muzej grada Zagreba",
+            "webstranica": "www.mgz.hr"
+          }
+        ]
+      },
+      "izlozbe": {
+        "type": "array",
+        "title": "Izložbe",
+        "items": {
+          "type": "object",
+          "title": "Informacije o izložbi",
+          "required": [
+            "opis",
+            "idmuzeja",
+            "idizlozbe",
+            "datumpocetka",
+            "nazivizlozbe",
+            "vrstaizlozbe",
+            "datumzavrsetka"
+          ],
+          "properties": {
+            "opis": {
+              "type": "string",
+              "title": "Opis",
+              "examples": [
+                "povijest",
+                "fotografija",
+                "prikaz projekta",
+                "moderna umjetnost",
+                "slikarstvo",
+                "dječja umjetnost",
+                "umjetnost za slabovidne",
+                "književni rad",
+                "religija",
+                "memorijalna zbirka"
+              ]
+            },
+            "idmuzeja": {
+              "type": "integer",
+              "title": "ID muzeja",
+              "examples": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+            },
+            "idizlozbe": {
+              "type": "integer",
+              "title": "ID izložbe",
+              "examples": [
+                1, 2, 16, 3, 13, 14, 4, 15, 5, 6, 7, 8, 9, 10, 11, 12
+              ]
+            },
+            "datumpocetka": {
+              "type": "date",
+              "title": "Datum početka",
+              "examples": [
+                "2023-10-03",
+                "2023-10-26",
+                "2023-10-24",
+                "2023-10-17",
+                "2023-09-14",
+                "2023-07-21",
+                "2023-09-15",
+                "2023-05-18",
+                "2023-10-12",
+                "2018-05-09",
+                "2023-10-10"
+              ]
+            },
+            "nazivizlozbe": {
+              "type": "string",
+              "title": "Naziv izložbe",
+              "examples": [
+                "Između Praga i Kaira - 100 godina češke egiptologije",
+                "Rasvijetljena soba - Konflikt",
+                "Hrvatska nematerijalna kulturna baština na UNESCO-ovim listama",
+                "KONTEJNER 3.0: Realities in Transition XR Camp – Prošireni svjetovi",
+                "KONTEJNER 3.0: Izložba Živi sustavi – koncepti prirodne i umjetne drugosti u kolektivnim habitatima",
+                "Vlatka Horvat: Dobro društvo/Okidači",
+                "Marika Šafran Berberović - Bjeline; Svjetla; Sjene",
+                "Tradicija i suvremenost - Vječna potka inspiracije – Narodna umjetnost, priče, običaji, obrt i alati",
+                "Rasvijetljena soba - Ženska fotografska praksa u Hrvatskoj",
+                "Nevidljivi portreti",
+                "Bršljan i Smilje - krasno bilje : uz 150. obljetnicu dvaju hrvatskih dječjih časopisa",
+                "Ivana Franke “Resonance of the Unforeseen”",
+                "Do novog HPM-a: Fondovi Europske unije i Grad Zagreb za novi Hrvatski prirodoslovni muzej",
+                "Najsvjetliji lik Crkve Božje u Hrvata",
+                "Catino 20. stoljeće",
+                "Mi smo novi život"
+              ]
+            },
+            "vrstaizlozbe": {
+              "type": "string",
+              "title": "Vrsta izložbe",
+              "examples": ["uživo", "virtualna"]
+            },
+            "datumzavrsetka": {
+              "type": "date",
+              "title": "Datum završetka",
+              "examples": [
+                "2023-11-30",
+                "2023-11-26",
+                "2023-11-19",
+                "2023-10-29",
+                "2023-11-12",
+                "2024-07-21",
+                "2024-04-15",
+                "2023-12-03",
+                "2023-06-18",
+                "2023-12-09",
+                "2023-11-03",
+                "2018-06-09",
+                "2024-02-04",
+                "2024-11-19"
+              ]
+            }
+          },
+          "examples": [
+            {
+              "opis": "povijest",
+              "idmuzeja": 1,
+              "idizlozbe": 1,
+              "datumpocetka": "2023-10-03",
+              "nazivizlozbe": "Između Praga i Kaira - 100 godina češke egiptologije",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-30"
+            },
+            {
+              "opis": "fotografija",
+              "idmuzeja": 2,
+              "idizlozbe": 2,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Rasvijetljena soba - Konflikt",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-26"
+            },
+            {
+              "opis": "prikaz projekta",
+              "idmuzeja": 2,
+              "idizlozbe": 16,
+              "datumpocetka": "2023-10-03",
+              "nazivizlozbe": "Hrvatska nematerijalna kulturna baština na UNESCO-ovim listama",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-19"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 3,
+              "datumpocetka": "2023-10-24",
+              "nazivizlozbe": "KONTEJNER 3.0: Realities in Transition XR Camp – Prošireni svjetovi",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-10-29"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 13,
+              "datumpocetka": "2023-10-17",
+              "nazivizlozbe": "KONTEJNER 3.0: Izložba Živi sustavi – koncepti prirodne i umjetne drugosti u kolektivnim habitatima",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-10-29"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 14,
+              "datumpocetka": "2023-09-14",
+              "nazivizlozbe": "Vlatka Horvat: Dobro društvo/Okidači",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-12"
+            },
+            {
+              "opis": "slikarstvo",
+              "idmuzeja": 4,
+              "idizlozbe": 4,
+              "datumpocetka": "2023-07-21",
+              "nazivizlozbe": "Marika Šafran Berberović - Bjeline; Svjetla; Sjene",
+              "vrstaizlozbe": "virtualna",
+              "datumzavrsetka": "2024-07-21"
+            },
+            {
+              "opis": "dječja umjetnost",
+              "idmuzeja": 4,
+              "idizlozbe": 15,
+              "datumpocetka": "2023-09-15",
+              "nazivizlozbe": "Tradicija i suvremenost - Vječna potka inspiracije – Narodna umjetnost, priče, običaji, obrt i alati",
+              "vrstaizlozbe": "virtualna",
+              "datumzavrsetka": "2024-04-15"
+            },
+            {
+              "opis": "fotografija",
+              "idmuzeja": 5,
+              "idizlozbe": 5,
+              "datumpocetka": "2023-10-24",
+              "nazivizlozbe": "Rasvijetljena soba - Ženska fotografska praksa u Hrvatskoj",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-12-03"
+            },
+            {
+              "opis": "umjetnost za slabovidne",
+              "idmuzeja": 6,
+              "idizlozbe": 6,
+              "datumpocetka": "2023-05-18",
+              "nazivizlozbe": "Nevidljivi portreti",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-06-18"
+            },
+            {
+              "opis": "književni rad",
+              "idmuzeja": 7,
+              "idizlozbe": 7,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Bršljan i Smilje - krasno bilje : uz 150. obljetnicu dvaju hrvatskih dječjih časopisa",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-12-09"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 8,
+              "idizlozbe": 8,
+              "datumpocetka": "2023-10-12",
+              "nazivizlozbe": "Ivana Franke “Resonance of the Unforeseen”",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-12"
+            },
+            {
+              "opis": "prikaz projekta",
+              "idmuzeja": 9,
+              "idizlozbe": 9,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Do novog HPM-a: Fondovi Europske unije i Grad Zagreb za novi Hrvatski prirodoslovni muzej",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-03"
+            },
+            {
+              "opis": "religija",
+              "idmuzeja": 10,
+              "idizlozbe": 10,
+              "datumpocetka": "2018-05-09",
+              "nazivizlozbe": "Najsvjetliji lik Crkve Božje u Hrvata",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2018-06-09"
+            },
+            {
+              "opis": "memorijalna zbirka",
+              "idmuzeja": 11,
+              "idizlozbe": 11,
+              "datumpocetka": "2023-10-17",
+              "nazivizlozbe": "Catino 20. stoljeće",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2024-02-04"
+            },
+            {
+              "opis": "umjetnost za slabovidne",
+              "idmuzeja": 11,
+              "idizlozbe": 12,
+              "datumpocetka": "2023-10-10",
+              "nazivizlozbe": "Mi smo novi život",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2024-11-19"
+            }
+          ]
+        },
+        "examples": [
+          [
+            {
+              "opis": "povijest",
+              "idmuzeja": 1,
+              "idizlozbe": 1,
+              "datumpocetka": "2023-10-03",
+              "nazivizlozbe": "Između Praga i Kaira - 100 godina češke egiptologije",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-30"
+            }
+          ],
+          [
+            {
+              "opis": "fotografija",
+              "idmuzeja": 2,
+              "idizlozbe": 2,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Rasvijetljena soba - Konflikt",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-26"
+            },
+            {
+              "opis": "prikaz projekta",
+              "idmuzeja": 2,
+              "idizlozbe": 16,
+              "datumpocetka": "2023-10-03",
+              "nazivizlozbe": "Hrvatska nematerijalna kulturna baština na UNESCO-ovim listama",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-19"
+            }
+          ],
+          [
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 3,
+              "datumpocetka": "2023-10-24",
+              "nazivizlozbe": "KONTEJNER 3.0: Realities in Transition XR Camp – Prošireni svjetovi",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-10-29"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 13,
+              "datumpocetka": "2023-10-17",
+              "nazivizlozbe": "KONTEJNER 3.0: Izložba Živi sustavi – koncepti prirodne i umjetne drugosti u kolektivnim habitatima",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-10-29"
+            },
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 3,
+              "idizlozbe": 14,
+              "datumpocetka": "2023-09-14",
+              "nazivizlozbe": "Vlatka Horvat: Dobro društvo/Okidači",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-12"
+            }
+          ],
+          [
+            {
+              "opis": "slikarstvo",
+              "idmuzeja": 4,
+              "idizlozbe": 4,
+              "datumpocetka": "2023-07-21",
+              "nazivizlozbe": "Marika Šafran Berberović - Bjeline; Svjetla; Sjene",
+              "vrstaizlozbe": "virtualna",
+              "datumzavrsetka": "2024-07-21"
+            },
+            {
+              "opis": "dječja umjetnost",
+              "idmuzeja": 4,
+              "idizlozbe": 15,
+              "datumpocetka": "2023-09-15",
+              "nazivizlozbe": "Tradicija i suvremenost - Vječna potka inspiracije – Narodna umjetnost, priče, običaji, obrt i alati",
+              "vrstaizlozbe": "virtualna",
+              "datumzavrsetka": "2024-04-15"
+            }
+          ],
+          [
+            {
+              "opis": "fotografija",
+              "idmuzeja": 5,
+              "idizlozbe": 5,
+              "datumpocetka": "2023-10-24",
+              "nazivizlozbe": "Rasvijetljena soba - Ženska fotografska praksa u Hrvatskoj",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-12-03"
+            }
+          ],
+          [
+            {
+              "opis": "umjetnost za slabovidne",
+              "idmuzeja": 6,
+              "idizlozbe": 6,
+              "datumpocetka": "2023-05-18",
+              "nazivizlozbe": "Nevidljivi portreti",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-06-18"
+            }
+          ],
+          [
+            {
+              "opis": "književni rad",
+              "idmuzeja": 7,
+              "idizlozbe": 7,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Bršljan i Smilje - krasno bilje : uz 150. obljetnicu dvaju hrvatskih dječjih časopisa",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-12-09"
+            }
+          ],
+          [
+            {
+              "opis": "moderna umjetnost",
+              "idmuzeja": 8,
+              "idizlozbe": 8,
+              "datumpocetka": "2023-10-12",
+              "nazivizlozbe": "Ivana Franke “Resonance of the Unforeseen”",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-12"
+            }
+          ],
+          [
+            {
+              "opis": "prikaz projekta",
+              "idmuzeja": 9,
+              "idizlozbe": 9,
+              "datumpocetka": "2023-10-26",
+              "nazivizlozbe": "Do novog HPM-a: Fondovi Europske unije i Grad Zagreb za novi Hrvatski prirodoslovni muzej",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2023-11-03"
+            }
+          ],
+          [
+            {
+              "opis": "religija",
+              "idmuzeja": 10,
+              "idizlozbe": 10,
+              "datumpocetka": "2018-05-09",
+              "nazivizlozbe": "Najsvjetliji lik Crkve Božje u Hrvata",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2018-06-09"
+            }
+          ],
+          [
+            {
+              "opis": "memorijalna zbirka",
+              "idmuzeja": 11,
+              "idizlozbe": 11,
+              "datumpocetka": "2023-10-17",
+              "nazivizlozbe": "Catino 20. stoljeće",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2024-02-04"
+            },
+            {
+              "opis": "umjetnost za slabovidne",
+              "idmuzeja": 11,
+              "idizlozbe": 12,
+              "datumpocetka": "2023-10-10",
+              "nazivizlozbe": "Mi smo novi život",
+              "vrstaizlozbe": "uživo",
+              "datumzavrsetka": "2024-11-19"
+            }
+          ]
+        ]
+      }
+    },
+    "examples": [
+      {
+        "muzej": {
+          "mail": "amz@amz.hr",
+          "adresa": "Trg Nikole Šubića Zrinskog 19",
+          "telefon": "+385 1 4873 000",
+          "idmuzeja": 1,
+          "nazivmuzeja": "Arheološki muzej Zagreb",
+          "webstranica": "www.amz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "povijest",
+            "idmuzeja": 1,
+            "idizlozbe": 1,
+            "datumpocetka": "2023-10-03",
+            "nazivizlozbe": "Između Praga i Kaira - 100 godina češke egiptologije",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-30"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "emz@emz.hr",
+          "adresa": "Trg Mažuranića 14",
+          "telefon": "+385 1 4826 220",
+          "idmuzeja": 2,
+          "nazivmuzeja": "Etnografski muzej",
+          "webstranica": "www.emz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "fotografija",
+            "idmuzeja": 2,
+            "idizlozbe": 2,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Rasvijetljena soba - Konflikt",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-26"
+          },
+          {
+            "opis": "prikaz projekta",
+            "idmuzeja": 2,
+            "idizlozbe": 16,
+            "datumpocetka": "2023-10-03",
+            "nazivizlozbe": "Hrvatska nematerijalna kulturna baština na UNESCO-ovim listama",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-19"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "msu@msu.hr",
+          "adresa": "Avenija Dubrovnik 17",
+          "telefon": "+385 1 6052 700",
+          "idmuzeja": 3,
+          "nazivmuzeja": "Muzej suvremene umjetnosti",
+          "webstranica": "www.msu.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 3,
+            "datumpocetka": "2023-10-24",
+            "nazivizlozbe": "KONTEJNER 3.0: Realities in Transition XR Camp – Prošireni svjetovi",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-10-29"
+          },
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 13,
+            "datumpocetka": "2023-10-17",
+            "nazivizlozbe": "KONTEJNER 3.0: Izložba Živi sustavi – koncepti prirodne i umjetne drugosti u kolektivnim habitatima",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-10-29"
+          },
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 14,
+            "datumpocetka": "2023-09-14",
+            "nazivizlozbe": "Vlatka Horvat: Dobro društvo/Okidači",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-12"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "mimara@mimara.hr",
+          "adresa": "Rooseveltov trg 5",
+          "telefon": "+385 1 4828 100",
+          "idmuzeja": 4,
+          "nazivmuzeja": "Muzej Mimara",
+          "webstranica": "www.mimara.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "slikarstvo",
+            "idmuzeja": 4,
+            "idizlozbe": 4,
+            "datumpocetka": "2023-07-21",
+            "nazivizlozbe": "Marika Šafran Berberović - Bjeline; Svjetla; Sjene",
+            "vrstaizlozbe": "virtualna",
+            "datumzavrsetka": "2024-07-21"
+          },
+          {
+            "opis": "dječja umjetnost",
+            "idmuzeja": 4,
+            "idizlozbe": 15,
+            "datumpocetka": "2023-09-15",
+            "nazivizlozbe": "Tradicija i suvremenost - Vječna potka inspiracije – Narodna umjetnost, priče, običaji, obrt i alati",
+            "vrstaizlozbe": "virtualna",
+            "datumzavrsetka": "2024-04-15"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@tmnt.hr",
+          "adresa": "Savska cesta 18",
+          "telefon": "+385 1 4844 050",
+          "idmuzeja": 5,
+          "nazivmuzeja": "Tehnički muzej Nikola Tesla",
+          "webstranica": "www.tehnicki-muzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "fotografija",
+            "idmuzeja": 5,
+            "idizlozbe": 5,
+            "datumpocetka": "2023-10-24",
+            "nazivizlozbe": "Rasvijetljena soba - Ženska fotografska praksa u Hrvatskoj",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-12-03"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@tifoloskimuzej.hr",
+          "adresa": "Draškovićeva 80/II",
+          "telefon": "+385 1 4811 102",
+          "idmuzeja": 6,
+          "nazivmuzeja": "Tifološki muzej",
+          "webstranica": "www.tifoloskimuzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "umjetnost za slabovidne",
+            "idmuzeja": 6,
+            "idizlozbe": 6,
+            "datumpocetka": "2023-05-18",
+            "nazivizlozbe": "Nevidljivi portreti",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-06-18"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "hsm@hsmuzej.hr",
+          "adresa": "Trg Republike Hrvatske 4",
+          "telefon": "+385 1 4855 716",
+          "idmuzeja": 7,
+          "nazivmuzeja": "Hrvatski školski muzej",
+          "webstranica": "www.hsmuzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "književni rad",
+            "idmuzeja": 7,
+            "idizlozbe": 7,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Bršljan i Smilje - krasno bilje : uz 150. obljetnicu dvaju hrvatskih dječjih časopisa",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-12-09"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@lauba.hr",
+          "adresa": "Baruna Filipovića 23a",
+          "telefon": "+385 1 6302 11",
+          "idmuzeja": 8,
+          "nazivmuzeja": "Lauba",
+          "webstranica": "www.lauba.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 8,
+            "idizlozbe": 8,
+            "datumpocetka": "2023-10-12",
+            "nazivizlozbe": "Ivana Franke “Resonance of the Unforeseen”",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-12"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@hpm.hr",
+          "adresa": "Demetrova 1",
+          "telefon": "+385 1 4851 700",
+          "idmuzeja": 9,
+          "nazivmuzeja": "Hrvatski prirodoslovni muzej",
+          "webstranica": "www.hpm.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "prikaz projekta",
+            "idmuzeja": 9,
+            "idizlozbe": 9,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Do novog HPM-a: Fondovi Europske unije i Grad Zagreb za novi Hrvatski prirodoslovni muzej",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-03"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "muzejstepinac@zg-nadbiskupija.hr",
+          "adresa": "Kaptol 31",
+          "telefon": "+385 1 4894 879",
+          "idmuzeja": 10,
+          "nazivmuzeja": "Muzej blaženog Alojzija Stepinca",
+          "webstranica": "www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca"
+        },
+        "izlozbe": [
+          {
+            "opis": "religija",
+            "idmuzeja": 10,
+            "idizlozbe": 10,
+            "datumpocetka": "2018-05-09",
+            "nazivizlozbe": "Najsvjetliji lik Crkve Božje u Hrvata",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2018-06-09"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "mgz@mgz.hr",
+          "adresa": "Opatička 20",
+          "telefon": "+385 1 4851 361",
+          "idmuzeja": 11,
+          "nazivmuzeja": "Muzej grada Zagreba",
+          "webstranica": "www.mgz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "memorijalna zbirka",
+            "idmuzeja": 11,
+            "idizlozbe": 11,
+            "datumpocetka": "2023-10-17",
+            "nazivizlozbe": "Catino 20. stoljeće",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2024-02-04"
+          },
+          {
+            "opis": "umjetnost za slabovidne",
+            "idmuzeja": 11,
+            "idizlozbe": 12,
+            "datumpocetka": "2023-10-10",
+            "nazivizlozbe": "Mi smo novi život",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2024-11-19"
+          }
+        ]
+      }
+    ]
+  },
+  "examples": [
+    [
+      {
+        "muzej": {
+          "mail": "amz@amz.hr",
+          "adresa": "Trg Nikole Šubića Zrinskog 19",
+          "telefon": "+385 1 4873 000",
+          "idmuzeja": 1,
+          "nazivmuzeja": "Arheološki muzej Zagreb",
+          "webstranica": "www.amz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "povijest",
+            "idmuzeja": 1,
+            "idizlozbe": 1,
+            "datumpocetka": "2023-10-03",
+            "nazivizlozbe": "Između Praga i Kaira - 100 godina češke egiptologije",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-30"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "emz@emz.hr",
+          "adresa": "Trg Mažuranića 14",
+          "telefon": "+385 1 4826 220",
+          "idmuzeja": 2,
+          "nazivmuzeja": "Etnografski muzej",
+          "webstranica": "www.emz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "fotografija",
+            "idmuzeja": 2,
+            "idizlozbe": 2,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Rasvijetljena soba - Konflikt",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-26"
+          },
+          {
+            "opis": "prikaz projekta",
+            "idmuzeja": 2,
+            "idizlozbe": 16,
+            "datumpocetka": "2023-10-03",
+            "nazivizlozbe": "Hrvatska nematerijalna kulturna baština na UNESCO-ovim listama",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-19"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "msu@msu.hr",
+          "adresa": "Avenija Dubrovnik 17",
+          "telefon": "+385 1 6052 700",
+          "idmuzeja": 3,
+          "nazivmuzeja": "Muzej suvremene umjetnosti",
+          "webstranica": "www.msu.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 3,
+            "datumpocetka": "2023-10-24",
+            "nazivizlozbe": "KONTEJNER 3.0: Realities in Transition XR Camp – Prošireni svjetovi",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-10-29"
+          },
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 13,
+            "datumpocetka": "2023-10-17",
+            "nazivizlozbe": "KONTEJNER 3.0: Izložba Živi sustavi – koncepti prirodne i umjetne drugosti u kolektivnim habitatima",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-10-29"
+          },
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 3,
+            "idizlozbe": 14,
+            "datumpocetka": "2023-09-14",
+            "nazivizlozbe": "Vlatka Horvat: Dobro društvo/Okidači",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-12"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "mimara@mimara.hr",
+          "adresa": "Rooseveltov trg 5",
+          "telefon": "+385 1 4828 100",
+          "idmuzeja": 4,
+          "nazivmuzeja": "Muzej Mimara",
+          "webstranica": "www.mimara.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "slikarstvo",
+            "idmuzeja": 4,
+            "idizlozbe": 4,
+            "datumpocetka": "2023-07-21",
+            "nazivizlozbe": "Marika Šafran Berberović - Bjeline; Svjetla; Sjene",
+            "vrstaizlozbe": "virtualna",
+            "datumzavrsetka": "2024-07-21"
+          },
+          {
+            "opis": "dječja umjetnost",
+            "idmuzeja": 4,
+            "idizlozbe": 15,
+            "datumpocetka": "2023-09-15",
+            "nazivizlozbe": "Tradicija i suvremenost - Vječna potka inspiracije – Narodna umjetnost, priče, običaji, obrt i alati",
+            "vrstaizlozbe": "virtualna",
+            "datumzavrsetka": "2024-04-15"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@tmnt.hr",
+          "adresa": "Savska cesta 18",
+          "telefon": "+385 1 4844 050",
+          "idmuzeja": 5,
+          "nazivmuzeja": "Tehnički muzej Nikola Tesla",
+          "webstranica": "www.tehnicki-muzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "fotografija",
+            "idmuzeja": 5,
+            "idizlozbe": 5,
+            "datumpocetka": "2023-10-24",
+            "nazivizlozbe": "Rasvijetljena soba - Ženska fotografska praksa u Hrvatskoj",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-12-03"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@tifoloskimuzej.hr",
+          "adresa": "Draškovićeva 80/II",
+          "telefon": "+385 1 4811 102",
+          "idmuzeja": 6,
+          "nazivmuzeja": "Tifološki muzej",
+          "webstranica": "www.tifoloskimuzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "umjetnost za slabovidne",
+            "idmuzeja": 6,
+            "idizlozbe": 6,
+            "datumpocetka": "2023-05-18",
+            "nazivizlozbe": "Nevidljivi portreti",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-06-18"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "hsm@hsmuzej.hr",
+          "adresa": "Trg Republike Hrvatske 4",
+          "telefon": "+385 1 4855 716",
+          "idmuzeja": 7,
+          "nazivmuzeja": "Hrvatski školski muzej",
+          "webstranica": "www.hsmuzej.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "književni rad",
+            "idmuzeja": 7,
+            "idizlozbe": 7,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Bršljan i Smilje - krasno bilje : uz 150. obljetnicu dvaju hrvatskih dječjih časopisa",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-12-09"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@lauba.hr",
+          "adresa": "Baruna Filipovića 23a",
+          "telefon": "+385 1 6302 11",
+          "idmuzeja": 8,
+          "nazivmuzeja": "Lauba",
+          "webstranica": "www.lauba.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "moderna umjetnost",
+            "idmuzeja": 8,
+            "idizlozbe": 8,
+            "datumpocetka": "2023-10-12",
+            "nazivizlozbe": "Ivana Franke “Resonance of the Unforeseen”",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-12"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "info@hpm.hr",
+          "adresa": "Demetrova 1",
+          "telefon": "+385 1 4851 700",
+          "idmuzeja": 9,
+          "nazivmuzeja": "Hrvatski prirodoslovni muzej",
+          "webstranica": "www.hpm.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "prikaz projekta",
+            "idmuzeja": 9,
+            "idizlozbe": 9,
+            "datumpocetka": "2023-10-26",
+            "nazivizlozbe": "Do novog HPM-a: Fondovi Europske unije i Grad Zagreb za novi Hrvatski prirodoslovni muzej",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2023-11-03"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "muzejstepinac@zg-nadbiskupija.hr",
+          "adresa": "Kaptol 31",
+          "telefon": "+385 1 4894 879",
+          "idmuzeja": 10,
+          "nazivmuzeja": "Muzej blaženog Alojzija Stepinca",
+          "webstranica": "www.zg-nadbiskupija.hr/sveci-i-blazenici-crkve-u-hrvata/blazeni-alojzije-stepinac/muzej-bl-alojzija-stepinca"
+        },
+        "izlozbe": [
+          {
+            "opis": "religija",
+            "idmuzeja": 10,
+            "idizlozbe": 10,
+            "datumpocetka": "2018-05-09",
+            "nazivizlozbe": "Najsvjetliji lik Crkve Božje u Hrvata",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2018-06-09"
+          }
+        ]
+      },
+      {
+        "muzej": {
+          "mail": "mgz@mgz.hr",
+          "adresa": "Opatička 20",
+          "telefon": "+385 1 4851 361",
+          "idmuzeja": 11,
+          "nazivmuzeja": "Muzej grada Zagreba",
+          "webstranica": "www.mgz.hr"
+        },
+        "izlozbe": [
+          {
+            "opis": "memorijalna zbirka",
+            "idmuzeja": 11,
+            "idizlozbe": 11,
+            "datumpocetka": "2023-10-17",
+            "nazivizlozbe": "Catino 20. stoljeće",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2024-02-04"
+          },
+          {
+            "opis": "umjetnost za slabovidne",
+            "idmuzeja": 11,
+            "idizlozbe": 12,
+            "datumpocetka": "2023-10-10",
+            "nazivizlozbe": "Mi smo novi život",
+            "vrstaizlozbe": "uživo",
+            "datumzavrsetka": "2024-11-19"
+          }
+        ]
+      }
+    ]
+  ]
+}

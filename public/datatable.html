@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Muzeji grada Zagreba">
+    <meta name="keywords" content="muzeji, Zagreb, izložba, popis">
+    <meta name="author" content="Korina Jurić">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Muzeji grada Zagreba</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="datatable.html">Tablica muzeja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="search-form">
+        <input type="text" id="search-input" name="search" placeholder="Unesite pojam za pretragu">
+        <button type="submit">Pretraži</button>
+    </form>
+
+    <select id="search-attribute" name="attribute">
+        <option value="all">Svi atributi</option>
+        <option value="nazivmuzeja">Naziv muzeja</option>
+        <option value="nazivizlozbe">Naziv izložbe</option>
+        <option value="opis">Opis</option>
+        <option value="vrstaizlozbe">Vrsta izložbe</option>
+        <option value="datumpocetka">Datum početka</option>
+        <option value="datumzavrsetka">Datum završetka</option>
+        <option value="adresa">Adresa</option>
+        <option value="webstranica">Web stranica</option>
+        <option value="mail">Mail</option>
+        <option value="telefon">Telefon</option>
+    </select>
+    
+    <button id="download-csv" class="download-button">Preuzmi CSV</button>
+    <button id="download-json" class="download-button">Preuzmi JSON</button>
+
+    <div class="table-container">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Naziv muzeja</th>
+                    <th>Naziv izložbe</th>
+                    <th>Opis</th>
+                    <th>Vrsta izložbe</th>
+                    <th>Datum početka</th>
+                    <th>Datum završetka</th>
+                    <th>Adresa</th>
+                    <th>Web stranica</th>
+                    <th>Mail</th>
+                    <th>Telefon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Podaci iz baze -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="\scripts\table.js"></script>
+    <script src="\scripts\download.js"></script>
+
+</body>
+</html>
