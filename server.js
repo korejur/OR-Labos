@@ -1,23 +1,16 @@
 const express = require('express');
+const muzejiRoutes = require('./routes/muzeji_r');
+const pool = require('./routes/db');
 const path = require('path');
-const {
-    Pool
-} = require('pg');
-
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'muzejiZagreba',
-    password: 'bazepodataka',
-    port: 5432,
-});
+app.use(express.json());
 
+app.use('/api/v1/muzeji', muzejiRoutes);
 
-app.get('/data', async (req, res) => {
+/*app.get('/data', async (req, res) => {
     try {
         const searchTerm = req.query.search || '';
         const searchAttribute = req.query.attribute;
@@ -73,17 +66,13 @@ app.get('/data', async (req, res) => {
     }
 });
 
-
-
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/datatable', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'datatable.html'));
-});
-
+});*/
 
 app.listen(5500, () => {
     console.log(`Server running on port 5500`);
