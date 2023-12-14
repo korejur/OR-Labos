@@ -1,0 +1,314 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Muzeji i izložbe API",
+    "version": "3.0.0",
+    "description": "API za upravljanje informacijama o muzejima i izložbama. JSON Schema dostupna na: https://github.com/korejur/OR-Labos/blob/main/schema.json",
+    "contact": {
+      "email": "kj53930@fer.hr"
+    },
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en"
+    }
+  },
+  "paths": {
+    "/api/v1/muzeji": {
+      "get": {
+        "summary": "Dohvati sve muzeje",
+        "responses": {
+          "200": {
+            "description": "Fetched muzeji successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "No muzeji found"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      }
+    },
+    "/api/v1/muzeji/{id}": {
+      "get": {
+        "summary": "Dohvati muzej po ID-u",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID muzeja",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetched muzej successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "No muzej found for the specified ID."
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      }
+    },
+    "/api/v1/muzeji/izlozbe": {
+      "get": {
+        "summary": "Dohvati sve izložbe",
+        "responses": {
+          "200": {
+            "description": "Fetched izlozbe successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "No izlozbe found"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      },
+      "post": {
+        "summary": "Dodaj novu izložbu",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "https://github.com/korejur/OR-Labos/blob/main/schema.json",
+                "properties": {
+                  "idizlozbe": {
+                    "type": "integer"
+                  },
+                  "nazivizlozbe": {
+                    "type": "string"
+                  },
+                  "datumpocetka": {
+                    "type": "string"
+                  },
+                  "datumzavrsetka": {
+                    "type": "string"
+                  },
+                  "opis": {
+                    "type": "string"
+                  },
+                  "vrstaizlozbe": {
+                    "type": "string"
+                  },
+                  "idmuzeja": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "idizlozbe",
+                  "nazivizlozbe",
+                  "datumpocetka",
+                  "datumzavrsetka",
+                  "opis",
+                  "vrstaizlozbe",
+                  "idmuzeja"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Izlozba added successfully",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Missing required fields in the request body"
+          }, 
+          "404": {
+            "description": "Izlozba already exists"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      }
+    },
+    "/api/v1/muzeji/izlozbe/{id}": {
+      "get": {
+        "summary": "Dohvati izložbu po ID-u",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID izložbe",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetched izlozba successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "No izlozba found for the specified ID"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Obriši izložbu po ID-u",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID izložbe",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Izlozba deleted successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "No izlozba found for the specified ID"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      },
+      "put": {
+        "summary": "Ažuriraj izložbu",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID izložbe",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "https://github.com/korejur/OR-Labos/blob/main/schema.json",
+                "properties": {
+                  "nazivizlozbe": {
+                    "type": "string"
+                  },
+                  "datumpocetka": {
+                    "type": "string"
+                  },
+                  "datumzavrsetka": {
+                    "type": "string"
+                  },
+                  "opis": {
+                    "type": "string"
+                  },
+                  "vrstaizlozbe": {
+                    "type": "string"
+                  },
+                  "idmuzeja": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "nazivizlozbe",
+                  "datumpocetka",
+                  "datumzavrsetka",
+                  "opis",
+                  "vrstaizlozbe",
+                  "idmuzeja"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Izlozba updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "400": {
+            "description": "Izlozba's ID cannot be changed"
+          },
+          "404": {
+            "description": "Izlozba not found"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      }
+    },
+    "/api/v1/muzeji/izlozbe/opis/{opis}": {
+      "get": {
+        "summary": "Dohvati izložbu po opisu izložbe",
+        "parameters": [
+          {
+            "name": "opis",
+            "in": "path",
+            "description": "opis izložbe",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Fetched izlozba successfully",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "No izlozba found for the specified description"
+          },
+          "500": {
+            "description": "An unexpected error occurred."
+          }
+        }
+      }
+    }
+  }
+}
