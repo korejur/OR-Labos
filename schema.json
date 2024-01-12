@@ -248,7 +248,7 @@
               ]
             },
             "datumpocetka": {
-              "type": "date",
+              "type": "string",
               "title": "Datum početka",
               "examples": [
                 "2023-10-03",
@@ -292,7 +292,7 @@
               "examples": ["uživo", "virtualna"]
             },
             "datumzavrsetka": {
-              "type": "date",
+              "type": "string",
               "title": "Datum završetka",
               "examples": [
                 "2023-11-30",
