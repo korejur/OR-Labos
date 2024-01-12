@@ -35,10 +35,39 @@ const getMuzeji = (req, res) => {
                     res.setHeader('Content-Type', 'application/json');
                     res.status(404).json(response);
                 } else {
+                    const muzeji = results.rows.map(muzej => ({
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "idmuzeja": "identifier",
+                            "nazivmuzeja": "name",
+                            "adresa": "address",
+                            "webstranica": "url",
+                        },
+                        "@type": "Museum",
+                        "idmuzeja": muzej.idmuzeja,
+                        "nazivmuzeja": muzej.nazivmuzeja,
+                        "adresa": muzej.adresa,
+                        "webstranica": muzej.webstranica,
+                    }));
+                    
+                    const contactPoints = results.rows.map(muzej => ({
+                        "@context": {
+                            "@vocab": "http://schema.org/",
+                            "mail": "email",
+                            "telefon": "telephone",
+                        },
+                        "@type": "ContactPoint",
+                        "mail": muzej.mail,
+                        "telefon": muzej.telefon,
+                    }));
+
                     const response = {
                         status: "OK",
                         message: "Fetched muzeji successfully",
-                        response: results.rows,
+                        response: {
+                            muzeji,
+                            contactPoints
+                        },
                         links: [
                             {
                                 href: "/api/v1/muzeji",
@@ -47,7 +76,7 @@ const getMuzeji = (req, res) => {
                             }
                         ]
                     };
-                    res.setHeader('Content-Type', 'application/json');
+                    res.setHeader('Content-Type', 'application/ld+json');
                     res.status(200).json(response);
                 }
             }
@@ -107,18 +136,49 @@ const getMuzejById = (req, res) => {
                 return res.status(404).json(response);
             }
 
+            const muzeji = results.rows.map(muzej => ({
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "idmuzeja": "identifier",
+                    "nazivmuzeja": "name",
+                    "adresa": "address",
+                    "webstranica": "url",
+                },
+                "@type": "Museum",
+                "idmuzeja": muzej.idmuzeja,
+                "nazivmuzeja": muzej.nazivmuzeja,
+                "adresa": muzej.adresa,
+                "webstranica": muzej.webstranica,
+                // Add other relevant fields based on your data model
+            }));
+            
+            const contactPoints = results.rows.map(muzej => ({
+                "@context": {
+                    "@vocab": "http://schema.org/",
+                    "mail": "email",
+                    "telefon": "telephone",
+                },
+                "@type": "ContactPoint",
+                "mail": muzej.mail,
+                "telefon": muzej.telefon,
+            }));
+
             const response = {
                 status: "OK",
-                message: "Fetched muzej successfully",
-                data: results.rows,
+                message: "Fetched muzeji successfully",
+                response: {
+                    muzeji,
+                    contactPoints
+                },
                 links: [
                     {
                         href: "/api/v1/muzeji",
-                        rel: "muzeji",
+                        rel: "self",
                         type: "GET"
                     }
                 ]
             };
+            res.setHeader('Content-Type', 'application/ld+json');
             res.status(200).json(response);
         });
     } catch (exception) {
@@ -177,10 +237,48 @@ const getIzlozbe = (req, res) => {
                 return res.status(404).json(response);
             }
 
+            const izlozbe = results.rows.map(izlozba => {
+                const {
+                    idizlozbe,
+                    nazivizlozbe,
+                    datumpocetka,
+                    datumzavrsetka,
+                    opis,
+                    vrstaizlozbe,
+                    idmuzeja,
+                } = izlozba;
+
+                return {
+                    "@context": {
+                        "@vocab": "https://schema.org/", 
+                        "idizlozbe": "identifier",
+                        "nazivizlozbe": "name",
+                        "datumpocetka": "startDate",
+                        "datumzavrsetka": "endDate",
+                        "opis": "description",
+                        "vrstaizlozbe": "eventAttendanceMode",
+                        "idmuzeja": "identifier",
+
+                    },
+                    "@type": "ExhibitionEvent",
+                    "idizlozbe": idizlozbe,
+                    "nazivizlozbe": nazivizlozbe,
+                    "datumpocetka": datumpocetka,
+                    "datumzavrsetka": datumzavrsetka,
+                    "opis": opis,
+                    "vrstaizlozbe": vrstaizlozbe === "virtualna" ? "OnlineEventAttendanceMode" : "OfflineEventAttendanceMode",
+                    "location": {
+                        "@type": "Place",
+                        "idmuzeja": idmuzeja,
+                    },
+                };
+            });
+
+
             const response = {
                 status: "OK",
                 message: "Fetched izlozbe successfully",
-                response: results.rows,
+                response: izlozbe,
                 links: [
                     {
                         href: "/api/v1/muzeji",
@@ -266,10 +364,47 @@ const getIzlozbaById = (req, res) => {
                 return res.status(404).json(response);
             }
 
+            const izlozbe = results.rows.map(izlozba => {
+                const {
+                    idizlozbe,
+                    nazivizlozbe,
+                    datumpocetka,
+                    datumzavrsetka,
+                    opis,
+                    vrstaizlozbe,
+                    idmuzeja,
+                } = izlozba;
+
+                return {
+                    "@context": {
+                        "@vocab": "https://schema.org/", 
+                        "idizlozbe": "identifier",
+                        "nazivizlozbe": "name",
+                        "datumpocetka": "startDate",
+                        "datumzavrsetka": "endDate",
+                        "opis": "description",
+                        "vrstaizlozbe": "eventAttendanceMode",
+                        "idmuzeja": "identifier",
+
+                    },
+                    "@type": "ExhibitionEvent",
+                    "idizlozbe": idizlozbe,
+                    "nazivizlozbe": nazivizlozbe,
+                    "datumpocetka": datumpocetka,
+                    "datumzavrsetka": datumzavrsetka,
+                    "opis": opis,
+                    "vrstaizlozbe": vrstaizlozbe === "virtualna" ? "OnlineEventAttendanceMode" : "OfflineEventAttendanceMode",
+                    "location": {
+                        "@type": "Place",
+                        "idmuzeja": idmuzeja,
+                    },
+                };
+            });
+
             const response = {
                 status: "OK",
                 message: "Fetched izlozba successfully",
-                response: results.rows,
+                response: izlozbe,
                 links: [
                     {
                         href: "/api/v1/muzeji/izlozbe",
@@ -355,10 +490,47 @@ const getIzlozbaByOpis = (req, res) => {
                 return res.status(404).json(response);
             }
 
+            const izlozbe = results.rows.map(izlozba => {
+                const {
+                    idizlozbe,
+                    nazivizlozbe,
+                    datumpocetka,
+                    datumzavrsetka,
+                    opis,
+                    vrstaizlozbe,
+                    idmuzeja,
+                } = izlozba;
+
+                return {
+                    "@context": {
+                        "@vocab": "https://schema.org/", 
+                        "idizlozbe": "identifier",
+                        "nazivizlozbe": "name",
+                        "datumpocetka": "startDate",
+                        "datumzavrsetka": "endDate",
+                        "opis": "description",
+                        "vrstaizlozbe": "eventAttendanceMode",
+                        "idmuzeja": "identifier",
+
+                    },
+                    "@type": "ExhibitionEvent",
+                    "idizlozbe": idizlozbe,
+                    "nazivizlozbe": nazivizlozbe,
+                    "datumpocetka": datumpocetka,
+                    "datumzavrsetka": datumzavrsetka,
+                    "opis": opis,
+                    "vrstaizlozbe": vrstaizlozbe === "virtualna" ? "OnlineEventAttendanceMode" : "OfflineEventAttendanceMode",
+                    "location": {
+                        "@type": "Place",
+                        "idmuzeja": idmuzeja,
+                    },
+                };
+            });
+
             const response = {
                 status: "OK",
                 message: "Fetched izlozba successfully",
-                response: results.rows,
+                response: izlozbe,
                 links: [
                     {
                         href: "/api/v1/muzeji/izlozbe",
@@ -401,7 +573,7 @@ const addIzlozba = async (req, res) => {
     try {
         const { idizlozbe, nazivizlozbe, datumpocetka, datumzavrsetka, opis, vrstaizlozbe, idmuzeja } = req.body;
         console.log("Received request body:", req.body);
-        
+
         if (!idizlozbe || !nazivizlozbe || !datumpocetka || !datumzavrsetka || !opis || !vrstaizlozbe || !idmuzeja) {
             return res.status(400).json({
                 status: "Bad Request",
