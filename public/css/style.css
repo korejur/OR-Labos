@@ -132,3 +132,42 @@ body {
   background-color: yellow;
   font-weight: bold;
 }
+
+.userprofile {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.userprofile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.userprofile li {
+  margin-bottom: 10px;
+}
+
+.userprofile li strong {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.userprofile a {
+  display: block;
+  margin-top: 20px;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.userprofile a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 2vh;
+}

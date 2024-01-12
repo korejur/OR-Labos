@@ -62,3 +62,4 @@ function downloadJson() {
     a.download = 'muzeji_Zagreb.json';
     a.click();
 }
+

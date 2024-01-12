@@ -54,8 +54,8 @@ function fillTable(data) {
             <td>${highlightSearchTerm(row.nazivizlozbe, searchTerm)}</td>
             <td>${highlightSearchTerm(row.opis, searchTerm)}</td>
             <td>${highlightSearchTerm(row.vrstaizlozbe, searchTerm)}</td>
-            <td>${formatDate(row.datumpocetka)}</td>
-            <td>${formatDate(row.datumzavrsetka)}</td>
+            <td>${formatDate(row.datumpocetka_str)}</td>
+            <td>${formatDate(row.datumzavrsetka_str)}</td>
             <td>${highlightSearchTerm(row.adresa, searchTerm)}</td>
             <td>${highlightSearchTerm(row.webstranica, searchTerm)}</td>
             <td>${highlightSearchTerm(row.mail, searchTerm)}</td>
