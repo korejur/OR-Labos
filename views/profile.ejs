@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Muzeji grada Zagreba">
+    <meta name="keywords" content="muzeji, Zagreb, izložba, popis">
+    <meta name="author" content="Korina Jurić">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Muzeji grada Zagreba</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="/">Početna</a></li>
+                <li><a href="/datatable">Tablica muzeja</a></li>
+                <li id="login"><a href="/login" id="loginButton">Prijava</a></li>
+                <li id="profile" style="display: none;"><a href="/profile">Korisnički profil</a></li>
+                <li id="refresh" style="display: none;"><a href="#" onclick="initiateSequentialDownloads()">Osvježi
+                        preslike</a></li>
+                <li id="logout" style="display: none;"><a href="/logout">Odjava</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Korisnički profil</h1>
+    <div class="userprofile">
+        <ul>
+            <li><strong>Korisnički ID:</strong> <%= user.sub %></li>
+            <li><strong>Ime:</strong> <%= user.name %></li>
+            <li><strong>Email:</strong> <%= user.email %></li>
+            <!-- Add any additional attributes you want to display -->
+        </ul>
+    </div>
+
+    
+    <script src="/scripts/user.js"></script>
+    <script>
+        function initiateSequentialDownloads() {
+            event.preventDefault();
+            window.location.href = '/exportData?format=csv';
+            setTimeout(() => {
+                window.location.href = '/exportData?format=json';
+            }, 1000);
+        }
+    </script>
+
+</body>
+
+</html>
